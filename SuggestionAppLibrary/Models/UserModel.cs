@@ -15,7 +15,7 @@ public class UserModel
 
     public string EmailAddress { get; set; }
 
-    public List<BasicSuggestionModel> AuthorSuggestions { get; set; } = new();
+    public List<BasicSuggestionModel> AuthoredSuggestions { get; set; } = new();
 
     public List<BasicSuggestionModel> VotedOnSuggestions { get; set; } = new();
 }
