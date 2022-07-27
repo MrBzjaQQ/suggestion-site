@@ -112,7 +112,8 @@ public class MongoSuggestionData : ISuggestionData
 
         using var session = await client.StartSessionAsync();
 
-        session.StartTransaction();
+        // TODO: NotSupportedException - Standalone servers do not support transactions.
+        // session.StartTransaction();
 
         try
         {
@@ -127,7 +128,7 @@ public class MongoSuggestionData : ISuggestionData
         }
         catch (Exception ex)
         {
-            await session.AbortTransactionAsync();
+            // await session.AbortTransactionAsync();
             throw;
         }
     }
